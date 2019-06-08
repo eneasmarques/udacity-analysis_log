@@ -48,8 +48,8 @@ SELECT au.id, au.name, count(ar.id) as views
 FROM log l, articles ar, authors au
 WHERE '/article/'||ar.slug = l.path and au.id = ar.author
 and l.status = '200 OK'
-GROUP BY au.id, ar.id, ar.title
-ORDER BY views desc limit 3
+GROUP BY au.id
+ORDER BY views desc
 """
 
 print(formatText())
